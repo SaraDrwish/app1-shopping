@@ -50,8 +50,6 @@ nav {
     flex-direction: row-reverse;
     /* background-color: rgb(206, 0, 0); */
     /* width: 66%; */
-    
-
 }
 nav ul {
     display: flex;
@@ -69,23 +67,21 @@ nav ul {
 }
 .user-info{
     display: none;
-    /* display:flex; */
-    /* padding: 0.25%; */
     font-size: 22px;
     color: #9b916e;
     font-weight: 600;
     /* background-color: rgb(47, 47, 159); */
     flex-direction: row-reverse;
-    /* width: 55%; */
-        /* margin-left: auto;
-            text-align: right; */
-            position: relative;
+    position: relative;
 }
 .header-content .user-info .user {
  /* padding-top: .25%; */
     /* background-color: rgb(255, 88, 121); */
     display: none;
     color: #9b916e;
+        background-image: linear-gradient(to right , #9b916e , #625978 , #433958,#7f7655 , #9b916e , #433958  ,#7f7655, #433958 , #625978 , #7f7655 );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     /* border-left: 1px solid#9b916e; */
     /* border-bottom: 1px solid #9b916e; */
     /* border-right: 1px solid #9b916e; */
@@ -134,7 +130,30 @@ nav .user-info li .padge{
     text-align: center;
 }
 
-nav ul a{
+nav .user-info li .cards-prod{
+        position: absolute;
+        top: 60px;
+        left:40px;
+        /* transform:translate(-40px , 0) ; */
+        width: 244px;
+        background-color: #bab39b;
+        text-align: center;
+        padding: 2%;
+        border:1px solid #4d475b;
+        font-size: 13px;
+        color: #6d6750;
+}
+nav .user-info li .cards-prod a {
+font-size: 13px;
+padding: 2%;
+background-color: #595368;
+color: #BCB0D9;
+}
+nav .user-info li .cards-prod a:hover{
+    color: #BAB39B;
+}
+
+ul a{
     color: #625978;
     padding: 9px 33px;
     display: block;

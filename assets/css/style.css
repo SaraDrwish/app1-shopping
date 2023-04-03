@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(150, 140, 176) ; */
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    text-transform: capitalize;
+    background-color: rgb(150, 140, 176) !important;
+}
+
+/* ------------------------------------------------------------ */
+
+header{
+    height: 80px;
+    background-color: rgb(188, 176, 217);
+    /* display: flex; */
+    /* justify-content: center; */
+    padding: 1%;
+    /* margin: auto; */
+    /* overflow: hidden; */
+}
+.container{
+    width: 80%;
+    /* background-color: rgb(123, 83, 30); */
+    margin: auto;
+    padding-top: 0.20%;
+}
+.header-content{
+/* background-color: rgb(80, 31, 59); */
+display: flex;
+justify-content: space-between;
+/* align-items: center; */
+}
+.header-content .shppca{
+        color: #3d3849;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 33px;
+        /* font-weight: 600; */
+}
+
+.user-info{
+    /* display: none;*/
+        display:flex;
+    /* padding: 0.25%; */
+    font-size: 22px;
+    color: #9b916e;
+    font-weight: 600;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* background-color: #625978; */
+}
+.header-content .user-info .user {
+ /* padding: .25%; */
+
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    /* background-color: blue; */
+    margin: auto;
+}
+nav ul li {
+    /*background-color: #3eaa69;
+    */padding: 2px;
+}
+nav ul a{
+    color: #625978;
+    padding: 11px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    min-width: 22px;
+    transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+    /* align-items: stretch; to work with this prpo you have to use min width */
+}
+nav ul li:hover a {
+    /* color: rgb(190, 155, 65) ; */
+color: #9b916e;
+}
+
+/* ------------------------------------------------------------- */
+
+
+section{
+    margin: auto;
+    text-align: center;
+    background-color: rgb(150, 140, 176);
+    padding: 4% 2%;
+    color: #4d475b;
+    /* height: 88vh; */
+}
+ .section-form form{
+    width: 55%;
+    display: flex;
+    margin: 2%  auto;
+    background-color: rgb(197, 189, 218);
+    flex-direction: column;
+    /* justify-content: space-around; */
+    padding: 1%;
+}
+.section-form form a{
+    color: #9b916e;
+    text-decoration: none;
+    font-weight: bold;
+}
+.section-form form input{
+    /* input doesnt follow to inhirti and didnt apply any prop from outside */
+    background-color: rgb(222, 215, 240);
+    padding: 1%;
+    margin: 2%;
+    /* display: block;
+    width: 100%; */
+    color: #3b3647;
+    /* color: #bab39b; */
+    border: none;
+}
+.section-form form input:focus{
+    outline: none;
+    border: none;
+}
+.section-form form input::placeholder {
+    color: #bab39b;   
+    text-transform: capitalize;
+}
+.section-form form input[type=submit]{
+    background-color: rgb(127, 118, 152);
+    color: rgb(218, 216, 186) ;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.section-form form input[type=submit]:hover {
+    /* background-color:rgb(190, 155, 65) ; */
+    /* background-color: #b0a88c; */
+   /* background-color: #9b916e; */
+    background-color: #bab39b;
+    color:rgb(127, 118, 152);
+}
+
+/* --------------------------------------------------- */
+
+
+.home-sec .products{
+    width: 100%;
+    margin: 2% auto;
+    background-color: #3d3849;
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 22px 44px 22px 44px;
+    -webkit-border-radius: 22px 44px 22px 44px;
+    -moz-border-radius: 22px 44px 22px 44px;
+    -ms-border-radius: 22px 44px 22px 44px;
+    -o-border-radius: 22px 44px 22px 44px;
+}
+
+.home-sec .products .product-item{
+        width: 30%;
+        background-color: #9b916e;
+        border-radius: 33px 66px 33px 66px;
+        -webkit-border-radius: 33px 66px 33px 66px;
+        -moz-border-radius: 33px 66px 33px 66px;
+        -ms-border-radius: 33px 66px 33px 66px;
+        -o-border-radius: 33px 66px 33px 66px;
+        padding: 1%;
+}
+
+.home-sec .products .product-item img {
+    /* width: 200px; */
+    height: 200px;
+    width: 50%;
+    border-radius: 33px 55px 44px 66px;
+    -webkit-border-radius: 33px 55px 44px 66px;
+    -moz-border-radius: 33px 55px 44px 66px;
+    -ms-border-radius: 33px 55px 44px 66px;
+    -o-border-radius: 33px 55px 44px 66px;
+    box-shadow: 2px 2px 22px #625978;
+}
+
+.home-sec .products .product-item .prod-item-des{
+    /* background-co/lor: #e2b71c; */
+     margin: 2% 0;
+     padding: 4%;
+
+}
+
+.home-sec .products .product-item .prod-item-action {
+    /* background-color: #ffe791;  */
+    margin: 2% 0;
+    padding: 4%;
+}
+
+.home-sec .products .product-item .prod-item-action button{
+       background-color: #BCB0D9;
+       padding: 2% 4%;
+       color: #9b916e;
+       border: none;
+       text-transform: capitalize;
+       font-size: 15px;
+       font-weight: 300;
+       border-radius: 11px;
+       -webkit-border-radius: 11px;
+       -moz-border-radius: 11px;
+       -ms-border-radius: 11px;
+       -o-border-radius: 11px;
+       transition: all .3s ease;
+       -webkit-transition: all .3s ease;
+       -moz-transition: all .3s ease;
+       -ms-transition: all .3s ease;
+       -o-transition: all .3s ease;
+}
+
+.home-sec .products .product-item .prod-item-action button:hover {
+    background-color: #d8cfb0;
+     color: #8679a3;
+}

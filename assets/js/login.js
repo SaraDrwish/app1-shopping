@@ -12,7 +12,8 @@ btnLogin.addEventListener("click", (e) => {
         alert("plz enter the data");
     }else{
         //prop in css deleted the spaces --- trim ---
-        if ( (userlocalN.trim() && userlocalN)  === (userName.value.trim() ) && (passLocalP && passLocalP.trim()  ) ===  pass.value) {
+        // if ( (userName.value.trim() ) && (userlocalN.trim() && userlocalN)  ===  (passLocalP && passLocalP.trim()  ) ===  pass.value) {
+        if ( userlocalN && userlocalN.trim() === userName.value && passLocalP && passLocalP.trim() === pass.value) {
             setTimeout(() => {
                 window.location = "index.html";
             }, 1000);

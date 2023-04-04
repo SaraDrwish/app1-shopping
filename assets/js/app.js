@@ -50,12 +50,12 @@ function drowProducts() {
 drowProducts();
 //-----------------------------------------------------------------------------------------------
 let cardsProdBox = document.querySelector(".cards-prod div");
+let padge = document.querySelector(".padge");
 
 let addedItemLocal = localStorage.getItem("productsInCard") ? JSON.parse(localStorage.getItem("productsInCard")) : [];
 if (addedItemLocal) {
-    
     addedItemLocal.map( i=> {
-        cardsProdBox.innerHTML = + `<p> ${i.title} </p>  `;
+        cardsProdBox.innerHTML += `<p> ${i.title} </p>  `;
     })
 
         padge.style.display = "block";
@@ -71,7 +71,6 @@ if (localStorage.getItem("userName")) {
         addedItemLocal = [...addedItemLocal, choosItem];
         localStorage.setItem("productsInCard", JSON.stringify(addedItemLocal));
                 
-        let padge = document.querySelector(".padge");
         let cardProdLength = document.querySelectorAll(".cards-prod div p")
 
         padge.style.display = "block";

@@ -73,26 +73,86 @@ function drowProducts() {
 drowProducts();
 //-----------------------------------------------------------------------------------------------
 
-function check() {
+// function check() {
     
     if (localStorage.getItem("userName")) {
-        window.location = "cardProduct.html";
+        // window.location = "cardProduct.html";
+        function addToCard(id) {
+    // console.log(id)
+    let choosItem = proudcts.find( (item) => item.id === id  );    
+    // console.log(choosItem)
+    cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
+
+// ----
+    
+let padge = document.querySelector(".padge");
+let cardProdLength = document.querySelectorAll(".cards-prod div p")
+
+        padge.style.display = "block";
+        padge.innerHTML = cardProdLength.length;
+
+// ----
+
+}
     } else {
         window.location = "login.html";
     }
 
-}
+// }
+
 // --------------------------------------------------------------------------------------------
 
-// let cardsProd = document.querySelector(".cards-prod");
 let cardsProdBox = document.querySelector(".cards-prod div");
 
-function addToCard(id) {
-    // console.log(id)
-    let choosItem = proudcts.find( (item) => item.id === id  );    
-        // console.log(choosItem)
+// function addToCard(id) {
+//     // console.log(id)
+//     let choosItem = proudcts.find( (item) => item.id === id  );    
+//     // console.log(choosItem)
     
     
-    cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
+//     cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
 
+// // ----
+    
+// let padge = document.querySelector(".padge");
+// let cardProdLength = document.querySelectorAll(".cards-prod div p")
+
+//         padge.style.display = "block";
+//         padge.innerHTML = cardProdLength.length;
+
+// // ----
+
+// }
+
+// --------------------------------------------------------------------------------------------
+
+let cardsProd = document.querySelector(".cards-prod");
+let shoppingCartIcon = document.querySelector(".shoppingCart");
+shoppingCartIcon.addEventListener("click", openCart );
+// shoppingCartIcon.addEventListener("chick", (e) => {
+    
+//     if (cardsProdBox.innerHTML != "") {
+// // ----------------------- toggle if ---------------------
+//         if (cardsProd.style.display = "block") {
+//             cardsProd.style.display = "none"
+//         } else {
+//             cardsProd.style.display = "block"
+//         }
+// }
+// } )
+
+function openCart() {
+    //   مطابقة لازم احط اتنين يساوي == || اما لو يساوي واحد اسناد  
+    if (cardsProdBox.innerHTML != "") {
+             //   مطابقة لازم احط اتنين يساوي == || اما لو يساوي واحد اسناد  
+        if(cardsProd.style.display == "block") {
+            cardsProd.style.display = "none"
+        }else{
+            cardsProd.style.display = "block"
+        }
+    }
 }
+
+// ----------------------------------------------------------------------------------------------
+
+

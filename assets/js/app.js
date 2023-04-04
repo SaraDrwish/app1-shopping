@@ -1,29 +1,6 @@
-
 // localStorage.setItem("firstcarkey", "value");
 // console.log(localStorage.getItem("firstcar"));
 
-let  userInfoUser = document.querySelector(".user-info .user");
-let  userInfo = document.querySelector(".user-info");
-let links = document.querySelector("#links");
-
-if (localStorage.getItem("userName") ) {
-    
-    links.remove();
-
-    userInfo.style.display = "flex";
-    userInfoUser.style.display = "flex";
-    userInfoUser.style.color = "#9b916e";
-
-    userInfoUser.innerHTML = "Welcome  " + localStorage.getItem( "userName");
-}
-// ---------------------------------------------------------------------------------------------
-let logout = document.querySelector(".logout");
-logout.addEventListener("click", (e) => {
-    e.preventDefault();
-    setTimeout(() => {
-        window.location = "login.html";
-    }, 1200);
-});
 // ----------------------------------------------------------------------------------------------
 let allProducts = document.querySelector(".products");
 let proudcts = [
@@ -72,74 +49,44 @@ function drowProducts() {
 }
 drowProducts();
 //-----------------------------------------------------------------------------------------------
+let cardsProdBox = document.querySelector(".cards-prod div");
 
-// function check() {
+let addedItemLocal = localStorage.getItem("productsInCard") ? JSON.parse(localStorage.getItem("productsInCard")) : [];
+if (addedItemLocal) {
     
-    if (localStorage.getItem("userName")) {
-        // window.location = "cardProduct.html";
-        function addToCard(id) {
-    // console.log(id)
-    let choosItem = proudcts.find( (item) => item.id === id  );    
-    // console.log(choosItem)
-    cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
+    addedItemLocal.map( i=> {
+        cardsProdBox.innerHTML = + `<p> ${i.title} </p>  `;
+    })
 
-// ----
-    
-let padge = document.querySelector(".padge");
-let cardProdLength = document.querySelectorAll(".cards-prod div p")
+        padge.style.display = "block";
+        padge.innerHTML = addedItemLocal.length;
+}
+
+if (localStorage.getItem("userName")) {
+
+    function addToCard(id) {
+        let choosItem = proudcts.find((item) => item.id === id);
+        cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
+
+        addedItemLocal = [...addedItemLocal, choosItem];
+        localStorage.setItem("productsInCard", JSON.stringify(addedItemLocal));
+                
+        let padge = document.querySelector(".padge");
+        let cardProdLength = document.querySelectorAll(".cards-prod div p")
 
         padge.style.display = "block";
         padge.innerHTML = cardProdLength.length;
 
-// ----
-
-}
-    } else {
-        window.location = "login.html";
     }
-
-// }
-
-// --------------------------------------------------------------------------------------------
-
-let cardsProdBox = document.querySelector(".cards-prod div");
-
-// function addToCard(id) {
-//     // console.log(id)
-//     let choosItem = proudcts.find( (item) => item.id === id  );    
-//     // console.log(choosItem)
-    
-    
-//     cardsProdBox.innerHTML += `<p> ${choosItem.title} </p>  `;
-
-// // ----
-    
-// let padge = document.querySelector(".padge");
-// let cardProdLength = document.querySelectorAll(".cards-prod div p")
-
-//         padge.style.display = "block";
-//         padge.innerHTML = cardProdLength.length;
-
-// // ----
-
-// }
+}else{
+        window.location = "login.html";
+}
 
 // --------------------------------------------------------------------------------------------
 
 let cardsProd = document.querySelector(".cards-prod");
 let shoppingCartIcon = document.querySelector(".shoppingCart");
 shoppingCartIcon.addEventListener("click", openCart );
-// shoppingCartIcon.addEventListener("chick", (e) => {
-    
-//     if (cardsProdBox.innerHTML != "") {
-// // ----------------------- toggle if ---------------------
-//         if (cardsProd.style.display = "block") {
-//             cardsProd.style.display = "none"
-//         } else {
-//             cardsProd.style.display = "block"
-//         }
-// }
-// } )
 
 function openCart() {
     //   مطابقة لازم احط اتنين يساوي == || اما لو يساوي واحد اسناد  

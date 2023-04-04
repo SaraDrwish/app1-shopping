@@ -10,19 +10,15 @@ btnLogin.addEventListener("click", (e) => {
     e.preventDefault();
     if (userName.value === "" || pass.value === "") {
         alert("plz enter the data");
-        
-    } else {
+    }else{
         //prop in css deleted the spaces --- trim ---
-        if ( (userName.value.trim() ) === (userlocalN.trim() && userlocalN) && pass.value === passLocalP && passLocalP.trim() ) {
-
+        if ( (userlocalN.trim() && userlocalN)  === (userName.value.trim() ) && (passLocalP && passLocalP.trim()  ) ===  pass.value) {
             setTimeout(() => {
-
                 window.location = "index.html";
-
             }, 1000);
-        } else {
-            alert("ur pass or email is not correct");
-        }
+            }else{
+                alert("ur pass or email is not correct");
+            }
     }
     
 
